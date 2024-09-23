@@ -14,7 +14,16 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
-  # WRITE THIS CODE
+  
+  raise TriangleError, "Some argument < 0" if (a + b <= c || a + c <= b || b + c <= a)
+
+  if a != b && b!=c && a!= c
+    return :scalene
+  elsif a == b && b == c
+    return :equilateral
+  else
+    return :isosceles
+  end
 end
 
 # Error class used in part 2.  No need to change this code.
